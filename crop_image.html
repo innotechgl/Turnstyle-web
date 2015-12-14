@@ -1,0 +1,645 @@
+
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>
+<html class="no-js ie6 ie" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js ie7 ie" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js ie8 ie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Shop Turnstyle - Profile</title>
+  
+  <!--<title></title>-->
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="Turnstyle">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta http-equiv="cleartype" content="on">
+
+  
+    
+      <meta property="og:title" content="DEFAULT TITLE HERE">
+      <meta property="og:description" content="DEFAULT DESCRIPTION HERE">
+      <meta property="og:type" content="website">
+      <meta property="og:image" content="static/img/logo_main.html">
+    
+  
+  <meta property="og:url" content="about.html">
+  <meta property="og:site_name" content="SITE NAME HERE">
+  <meta property="fb:admins" content="FACEBOOK ID HERE" />
+  
+  
+  <script src="static/script/angular.js"></script>
+  <script src="static/script/ng-img-crop.js"></script>
+  <link rel="stylesheet" type="text/css" href="static/script/ng-img-crop.css">
+  <style>
+    .cropArea {
+      overflow: hidden;
+      height:350px;
+    }
+  </style>
+  
+    <script>
+    angular.module('app', ['ngImgCrop'])
+      .controller('Ctrl', function($scope) {
+        $scope.myImage='';
+        $scope.myCroppedImage='';
+
+        var handleFileSelect=function(evt) {
+          var file=evt.currentTarget.files[0];
+          var reader = new FileReader();
+          reader.onload = function (evt) {
+            $scope.$apply(function($scope){
+              $scope.myImage=evt.target.result;
+            });
+          };
+          reader.readAsDataURL(file);
+		  
+		  $("#image_container").show();
+		  $("#image_preview_container").hide();
+		  
+		  
+		  
+        };
+        angular.element(document.querySelector('#fileInput')).on('change',handleFileSelect);
+      });
+	  
+	  
+	  window.onload = function() {
+		  $("#save_crop").click(function() {
+					  $("#image_container").hide();
+					  $("#image_preview_container").show();
+		});
+		
+		$("#file_choose_btn").click(function() {
+					  $("#fileInput").click();
+		});
+		
+		
+		};
+	  
+	  
+	  
+
+	  
+  </script>
+  
+
+  <link rel="shortcut icon" href="static/img/favicon.html" type="image/x-icon">
+  <link rel="icon" href="static/tenant/nag/static/img/favicon.html" type="image/x-icon">
+
+  <!--[if lt IE 9]>
+    <script src="/static/bower/html5shiv/dist/html5shiv.min.js"></script>
+  <![endif]-->
+  <link href="static/style/turnstyle.css" rel="stylesheet"/>
+  <!-- <link rel="stylesheet" href="/static/tenant/nag/static/css/tenant.css"> -->
+  
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  
+  
+  <script type="text/javascript">
+
+     var API_URI = 'api/index.html';
+      var Base_Uri = 'index.html';
+      var uid = '';
+      var guestAvatar = 'static/img/default-user-img.jpg';
+      var tenant = 'nag';
+
+    var contentImages = [];
+    var avatarSm = 'static/img/default-user-img.jpg';
+    var pageId = ''
+    var uKey ='https://smalltell.s3.amazonaws.com/';
+    var MediaServer ='';
+
+    var activeName = '';
+    var refUrl = 'about.html';
+
+    var purchaseAction = '';
+    var purchaseId = '';
+    var qty = '';
+    var amt = '';
+    var rpId = '';
+    var token = '';
+    var auth = 'False'.match(/[Ff]alse/g);
+    var isAuth = (auth != null && auth.length > 0 ? false : true);
+    //console.log(isAuth);
+
+    var code = '';
+    var id = '';
+    
+      var sellSet = false;
+    
+    
+      var fbSet = true;
+    
+
+  </script>
+  
+  
+  
+</head>
+
+<body id="" class="" ng-app="app" ng-controller="Ctrl">
+
+  
+  <header id="flyout-container">
+    <div id="menu-overlay" class="slide-modal slide-modal-style" data-slide aria-labelledby="modalTitle" aria-hidden="true" role="dialog" >
+
+	<div class="row">
+		<div class="small-12 columns columns--reset grid--relative">
+			<a class="close-slide-modal btn--action" data-slide-id="menu-overlay" aria-label="Close">
+				<img src="static/img/1turnstyle/x.svg" />
+			</a>
+		</div>	
+	</div>
+
+	
+
+	<div class="row nav-container" role="navigation">
+		<div class="small-12 columns columns--reset">
+			<ul id="nav" class="nav accordion reset text-center" data-accordion>
+				<li class="accordion-navigation">
+					<a data-url="/user/sell-something" data-selector="a.login-user" data-auth-type="login" role="button" class="btn--action btn-auth-user" data-acordion>
+						<h4 class="title">SELL SOMETHING</h4>
+					</a>
+				</li>
+
+				
+				
+				<li class="accordion-navigation">
+					<a href="#nav3" role="button" class="btn--action" data-acordion>
+						<h4 class="title">CATEGORIES +</h4>
+					</a>
+					<div id="nav3" class="content">
+						<ul class="subnav reset text-center">
+							<li>
+								<a href="#categories1" role="button" class="btn--action" data-acordion>
+									<h4 class="title">CATEGORIES 1</h4>
+								</a>
+							</li>
+							<li>
+								<a href="#categories2" role="button" class="btn--action" data-acordion>
+									<h4 class="title">CATEGORIES 2</h4>
+								</a>
+							</li>
+							<li>
+								<a href="#categories3" role="button" class="btn--action" data-acordion>
+									<h4 class="title">CATEGORIES 3</h4>
+								</a>
+							</li>
+							<li>
+								<a href="#categories4" role="button" class="btn--action" data-acordion>
+									<h4 class="title">CATEGORIES 4</h4>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="accordion-navigation">
+					<a href="#nav4" role="button" class="btn--action" data-acordion>
+						<h4 class="title">FOOTER +</h4>
+					</a>
+					<div id="nav4" class="content">
+						<ul class="subnav reset text-center">
+							<li>
+								<a href="about.html" role="button" class="btn--action" data-acordion>
+									<h4 class="title">ABOUT</h4>
+								</a>
+							</li>
+							<li>
+								<a href="faq.html" role="button" class="btn--action" data-acordion>
+									<h4 class="title">FAQ</h4>
+								</a>
+							</li>
+							<li>
+								<a href="fees.html" role="button" class="btn--action" data-acordion>
+									<h4 class="title">FEES</h4>
+								</a>
+							</li>
+							<li>
+								<a href="#legal" role="button" class="btn--action" data-acordion>
+									<h4 class="title">LEGAL</h4>
+								</a>
+							</li>
+							<li>
+								<a href="index.html" role="button" class="btn--action" data-acordion>
+									<h4 class="title">CONNECT</h4>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+  </header>
+  
+
+  <main id="main-wrapper" class="wrapper main-content template-about" role="main">
+
+    <div id="peek">
+      
+
+        
+          
+<div id="sticky">
+    <nav class="tab-bar">
+        <div class="left tab-bar-section">
+            <div class="tab-bar-inner-section grid--relative">
+                <a class="btn--action logo-container" href="index.html">
+                    <img class="logo" src="static/img/1turnstyle/logo.png" />
+                </a> 	
+                <div class="right-small menu--tab tab--search">
+                    <a id="search-trigger" role="button" aria-expanded="false" aria-controls="idOfRightMenu" class="" >
+                        <h6>SEARCH</h6>
+                        <!-- <img src="/static/img/1turnstyle/search.svg" /> -->
+                    </a>
+                </div>
+                <div class="right-small menu--tab tab--login">
+                    
+                        <a role="button" data-reveal-id="modal-login" aria-expanded="false" aria-controls="idOfRightMenu" class="btn--action login-user"><img class="login--image" src="static/img/1turnstyle/user-img-small.png"/></a>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="right-small">
+            <a role="button" data-slide-id="menu-overlay" aria-expanded="false" aria-controls="idOfRightMenu" class="right-off-canvas-toggle menu-icon" ><span></span></a>
+        </div>
+    </nav>
+    <div id="top-search-bar" class="" style="display:none">
+        <label for="home-search-field" class="search-icon">
+            <svg width="15px" height="15px" viewBox="0 0 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                    <g id="Mobile-New-Search" sketch:type="MSArtboardGroup" transform="translate(-35.000000, -111.500000)">
+                        <g id="Group" sketch:type="MSLayerGroup" transform="translate(0.000000, 80.000000)">
+                            <g id="Imported-Layers" transform="translate(35.000000, 32.000000)" sketch:type="MSShapeGroup">
+                                <path d="M22.5992713,18.089334 C25.4906128,13.435066 24.7722469,7.3787951 20.800106,3.49388015 C18.4971094,1.24145605 15.4383659,0 12.1845909,0 C8.93081594,0 5.86882191,1.24145605 3.56745059,3.49388015 C1.26445401,5.7431251 0,8.73628994 0,11.9170243 C0,15.1009378 1.26770454,18.0972818 3.57070112,20.3449372 C5.86719664,22.591003 8.92268963,23.8308695 12.1715888,23.8308695 C14.416076,23.8308695 16.5906768,23.2363694 18.4954842,22.1045939 L25.7116484,29.1686536 C26.2609871,29.7043395 26.9891046,30 27.7659799,30 C28.54123,30 29.2693475,29.7043395 29.8170608,29.1686536 C30.9498686,28.0591321 30.9498686,26.2597361 29.8170608,25.1533937 L22.5992713,18.089334 L22.5992713,18.089334 Z" id="Fill-2" fill="#3C3C3C"></path>
+                                <path d="M12.0038382,4.66666667 C10.0418721,4.66666667 8.20111471,5.43222112 6.81610238,6.8163565 C5.42947393,8.19887678 4.66666667,10.0416988 4.66666667,11.9991925 C4.66666667,13.9566861 5.42947393,15.797893 6.81610238,17.1836435 C8.20111471,18.5710091 10.0418721,19.3333333 12.0022221,19.3333333 C13.960956,19.3333333 15.8033294,18.5710091 17.1883418,17.1836435 C20.0472529,14.3249275 20.048869,9.6750725 17.1899579,6.8163565 C15.8049456,5.43222112 13.9625721,4.66666667 12.0038382,4.66666667 L12.0038382,4.66666667 Z" id="Fill-1" fill="#FFFFFF"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg><!-- magnifier --></label>
+        <input type="text" name="home-search" id="home-search-field" placeholder="SEARCH" />
+        <a id="home-search-x"><svg width="13px" height="13px" viewBox="0 0 25 26">
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+                    <g id="Mobile-New-Search" sketch:type="MSArtboardGroup" transform="translate(-589.000000, -114.500000)" fill="#3C3C3C">
+                        <g id="Group" sketch:type="MSLayerGroup" transform="translate(0.000000, 80.000000)">
+                            <g id="Rectangle-45-+-Rectangle-47" transform="translate(589.000000, 35.000000)" sketch:type="MSShapeGroup">
+                                <path d="M12.5,19.1291261 L8.07417676,23.5549493 C6.25018364,25.3789424 3.28203916,25.3791261 1.45145654,23.5485435 C-0.375401206,21.7216857 -0.381994075,18.752868 1.44505068,16.9258232 L5.87087393,12.5 L1.44505068,8.07417676 C-0.381994075,6.247132 -0.375401206,3.27831429 1.45145654,1.45145654 C3.28203916,-0.379126074 6.25018364,-0.37894243 8.07417676,1.44505068 L12.5,5.87087393 L16.9258232,1.44505068 C18.7498164,-0.37894243 21.7179608,-0.379126074 23.5485435,1.45145654 C25.3754012,3.27831429 25.3819941,6.247132 23.5549493,8.07417676 L19.1291261,12.5 L23.5549493,16.9258232 C25.3819941,18.752868 25.3754012,21.7216857 23.5485435,23.5485435 C21.7179608,25.3791261 18.7498164,25.3789424 16.9258232,23.5549493 L12.5,19.1291261 Z" id="Rectangle-45"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg></a>
+    </div>
+    
+</div>
+        
+
+      
+
+      <div id="scrollable" class="profile">
+	  
+	  
+
+	  
+	  
+ <div class="row">  
+   <div class="small-12 columns">
+     <h3>PROFILE</h3>
+   </div>
+ </div>
+ 
+ <div id="image_preview_container" class="row user--image--container">
+  <div class="small-12 user--image" id="preview-box">
+	  <div><img class="center circle_crop" ng-src="{{myCroppedImage}}"/></div>
+   </div>
+   <div id="offers-all" class="small-12 columns columns--reset offers-all text-center">
+ 
+
+     <div><input type="file" id="fileInput" style="display: none;" /></div>
+     <a role="button" id="file_choose_btn" data-selector="offers-list" data-filter="1" class="button small active image">CHOOSE IMAGE</a>
+
+	</div>
+ 
+ </div>
+ 
+ <div class="row" id="image_container">
+	<div class="cropArea">
+		<img-crop image="myImage" result-image="myCroppedImage"></img-crop>
+		
+	  </div>
+	  <a role="button" id="save_crop" class="button button-save tiny center">SAVE</a>
+</div>
+ 
+ <div class="row">
+   <div class="small-12 columns padding-section">
+          <label>Profile Name</label>
+          <input class="margin--reset" name="profile_name" type="text" placeholder="" value="">
+        </div>
+  </div>   
+      
+ <div class="row">     
+   <div class="small-12 columns padding-section" style="
+    padding-bottom: 0;">
+          <label>About</label>
+          <textarea class="checkoutkkkk&quot;margin--reset&quot;" name="about" placeholder="" rows="5"></textarea>
+    </div>
+ </div>    
+ 
+  <div class="row">
+   <div class="small-12 columns padding-section">
+          <label>Email Address</label>
+          <input class="margin--reset" name="email" type="text" placeholder="" value="">
+        </div>
+  </div>  
+        
+ <div class="row">
+   <div class="small-12 columns padding-section paypal">
+          <label>PayPal Email Address</label>
+          <input class="margin--reset" name="paypal" type="text" placeholder="" value="">
+        </div>
+  </div>  
+  
+<div class="row">
+  <div class="small-12 columns">
+          <a id="required" role="button" class="button button--required tiny center">REQUIRED TO SELL</a>
+        </div>
+</div>  
+
+<div class="row">
+        <div class="small-6 columns">
+          <select name="category">
+            <option disabled="" selected="">AGE RANGE</option>
+            <option value="CA">18+</option>
+            <option value="CA">30+</option>
+            <option value="CA">50+</option>
+          </select>
+        </div>
+        <div class="small-6 columns">
+          <select name="category">
+            <option disabled="" selected="">GENDER</option>
+            <option value="CA">Female</option>
+            <option value="CA">Male</option>
+          </select>
+        </div>
+      </div>
+      
+ <div class="row">
+   <div class="small-12 columns padding-section">
+          <label>Phone Number</label>
+          <input class="margin--reset" name="phone" type="text" placeholder="" value="">
+        </div>
+  </div>       
+
+<div class="row">  
+   <div class="small-12 columns" style="padding-top: 1rem;">
+     <h3>ADDRESS</h3>
+   </div>
+ </div>
+ 
+<div class="row">
+   <div class="small-12 columns padding-section">
+          <label>Full Name</label>
+          <input class="margin--reset" name="full_name" type="text" placeholder="" value="">
+        </div>
+  </div>  
+  
+ <div class="row">
+   <div class="small-12 columns padding-section">
+          <label>Address</label>
+          <input class="margin--reset" name="address" type="text" placeholder="" value="">
+        </div>
+  </div>  
+  
+ <div class="row">
+   <div class="small-12 columns padding-section">
+          <label>Address 2 (Apt, Unit, Suite, Etc)</label>
+          <input class="margin--reset" name="address2" type="text" placeholder="" value="">
+        </div>
+  </div>  
+  
+ <div class="row">
+   <div class="small-12 columns padding-section">
+          <label>City</label>
+          <input class="margin--reset" name="city" type="text" placeholder="" value="">
+        </div>
+  </div>  
+  
+<div class="row">
+        <div class="small-6 columns">
+          <label>STATE</label>
+          <select name="category">
+            <option disabled="" selected="">STATE</option>
+            <option value="CA">IL</option>
+            <option value="CA">CA</option>
+          </select>
+        </div>
+        <div class="small-6 columns">
+          <label>Zip Code</label>
+          <input class="margin--reset" name="zip" type="text" placeholder="" value="">
+        </div>
+      </div>
+      
+ <div class="row checkout--shipping__same-as-billing">
+        <div class="small-12 columns padding-section">
+          <label><input type="checkbox" name="billing_same"><b>SAME AS BILLING ADDRESS</b></label>
+        </div>
+      </div>     
+      
+ <div class="row">
+        <div class="small-12 columns center">
+          <a role="button" class="button button-save tiny center">SAVE</a>
+        </div>
+      </div>      
+        
+
+
+
+          
+        </div>
+      </div>
+     
+
+   
+  </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  
+
+  
+    <div id="modal-login" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <div class="section-transparent grid--relative">
+      <a class="close-reveal-modal btn--action" aria-label="product--image">
+      <img src="static/img/1turnstyle/x-white.svg" /></a>
+  </div>
+  <div class="modal-section">
+
+      <div id="login" class="form-section active">
+          <form id="form-login" method="post" name="userlogin" role="form" action="http://staging.shopturnstyle.com/api/auth/login/">
+            <div class="row">
+              <div class="small-12 columns text-center">
+                <h1 class="title big">LOGIN</h1>
+              </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns control-group">
+                  <input name="e" type="text" placeholder="Email" value="" />
+                  <small class="error none">Invalid entry</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns control-group">
+                  <input name="p" type="password" placeholder="Password" value="" />
+                  <small class="error none">Invalid Password</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns login-button">
+                  <button data-submit="login" role="button" class="button small full center modal-submit">LOGIN</button>
+                </div>
+                <div class="small-12 columns text-center forgot-link">
+                  <a data-submit="" class="link" data-selector="#forgotpassword">Forgot Password?</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns form-divider-after"></div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns text-center text--copy">
+                  <h6 class="small">Don't Have an Account?</h6>
+                </div>
+                <div class="small-12 columns login-button">
+                  <a data-submit="" role="button" class="button small full center modal-submit" data-selector="#signup">CREATE ACCOUNT</a>
+                </div>
+            </div>
+          </form>
+      </div>
+
+       <div id="signup" class="form-section">
+          <form id="form-signup" method="post" name="usersignup" role="form" action="http://staging.shopturnstyle.com/api/auth/register/">
+            <div class="row">
+              <div class="small-12 columns text-center">
+                <h1 class="title big">SIGN UP</h1>
+              </div>
+              <div class="small-12 columns text-center facebook">
+                <a data-submit="facebook" role="button" class="button tiny center modal-submit">SIGN UP WITH FACEBOOK</a>
+              </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns form-divider-before text-center">
+                  <h4 class="title center">OR</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns control-group">
+                  <input name="u" type="text" placeholder="Full Name" value="" />
+                  <small class="error none">Invalid entry</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns control-group">
+                  <input name="e" type="text" placeholder="Email" value="" />
+                  <small class="error none">Invalid Email</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns control-group">
+                  <input name="p" type="password" placeholder="Password" value="" />
+                  <small class="error none">Invalid Password</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns control-group">
+                  <input name="pc" type="password" placeholder="Confirm Password" value="" />
+                  <small class="error none">Password Incorrect</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns form-divider-after text-center"></div>
+            </div>
+
+            <div class="row">
+              <div class="small-12 columns text-center">
+                <h6 class="small">Sell Something?</h6>
+              </div>
+              <div class="small-12 columns">
+                  <input name="s" type="text" placeholder="Enter PayPal Email" value="Enter PayPal Email" />
+                </div>
+              <div class="small-12 columns login-button">
+                <button data-submit="create" role="button" class="button tiny active center modal-submit">CREATE ACCOUNT</button>
+              </div>
+            </div>
+          </form>
+      </div>
+
+      <div id="forgotpassword" class="form-section">
+          <form id="form-password-reset" method="post" name="passwordreset" role="form" action="http://staging.shopturnstyle.com/api/user/forgot/">
+            <div class="row">
+              <div class="small-12 columns text-center">
+                <h1 class="title big">PASSWORD</h1>
+              </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns control-group">
+                  <input name="e" type="text" placeholder="Email" value="" />
+                  <small class="error none">Invalid email</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns control-group">
+                  <button data-submit="create" role="button" class="button tiny center modal-submit">SEND INSTRUCTIONS</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 columns form-divider-after text-center"></div>
+            </div>
+            <div class="row">
+              <div class="small-12 columns text-center">
+                <h6 class="small">Remembered Your Password?</h6>
+              </div>
+              <div class="small-12 columns login-button">
+                <a data-submit="" class="button tiny active center modal-submit" data-selector="#login">Login</a>
+              </div>
+            </div>
+          </form>
+      </div>
+
+  </div>
+</div>
+  
+
+<script type="text/javascript" src="static/js/jquery.md5.min.js"></script>
+<script src="static/script/lodash.min.js"></script>
+<script src="static/script/react.min.js"></script>
+<script src="static/script/foundation.min.js"></script>
+<script src="static/script/validate.min.js"></script>
+<script src="static/script/turnstyle.min.js"></script>
+
+
+
+<!-- grunt-browser-sync. comment out in staging or production -->
+<script type='text/javascript' id="__bs_script__">//<![CDATA[
+    document.write("<script async src='../host_3000/browser-sync/browser-sync-client.1.9.2.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
+//]]></script>
+</body>
+
+</html>
